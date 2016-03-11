@@ -26,9 +26,13 @@
 								</header>
 							</section>
 
-						<ul>
-							<?php dynamic_sidebar( 'sidebar-1' ); ?>
-						</ul>
+							<?php
+								if ( is_active_sidebar( 'sidebar-1' ) ) {
+									echo '<ul>' . "\n";
+									dynamic_sidebar( 'sidebar-1' );
+									echo '</ul>' . "\n";
+								}
+							?>
 
 						<!-- Mini Posts -->
 							<section>
