@@ -7,8 +7,6 @@
  * @package Future_Imperfect
  */
 
-if ( is_active_sidebar( 'sidebar-1' ) ) {
-
 ?>
 
 
@@ -18,9 +16,6 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 				<!-- Sidebar -->
 					<section id="sidebar">
 
-						<ul>
-							<?php dynamic_sidebar( 'sidebar-1' ); ?>
-						</ul>
 
 						<!-- Intro -->
 							<section id="intro">
@@ -30,6 +25,10 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
 								</header>
 							</section>
+
+						<ul>
+							<?php dynamic_sidebar( 'sidebar-1' ); ?>
+						</ul>
 
 						<!-- Mini Posts -->
 							<section>
@@ -151,8 +150,3 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 							</section>
 
 					</section>
-
-<?php
-// end sidebar check
-}
-?>
