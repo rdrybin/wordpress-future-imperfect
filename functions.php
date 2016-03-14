@@ -123,8 +123,8 @@ function future_imperfect_widgets_init() {
 		'name'			=> esc_html__( 'Left Sidebar', 'future-imperfect' ),
 		'id'			=> 'sidebar-1',
 		'description'	=> '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'	=> '</li>',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">' . "\n",
+		'after_widget'	=> '</li>' . "\n",
 		'before_title'	=> '<h2 class="widget-title">',
 		'after_title'	=> '</h2>',
 	) );

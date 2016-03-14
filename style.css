@@ -3332,10 +3332,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		width: 22em;
 	}
 
+	li.widget {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		border-top: solid 1px rgba(160, 160, 160, 0.3);
+		margin: 3em 0 0 0;
+		padding: 3em 0 0 0;
+	}
+
 		#sidebar > * {
-			border-top: solid 1px rgba(160, 160, 160, 0.3);
-			margin: 3em 0 0 0;
-			padding: 3em 0 0 0;
+			margin: 0;
+			padding: 0;
 		}
 
 		#sidebar > :first-child {
