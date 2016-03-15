@@ -27,6 +27,19 @@ function future_imperfect_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// add button styles to next/prev links on single posts
+	function posts_link_attributes_next( $format ) {
+		$format = str_replace('href=', 'class="button big next" href=', $format);
+		return $format;
+	}
+	add_filter('next_post_link', 'posts_link_attributes_next');
+
+	function posts_link_attributes_prev( $format ) {
+		$format = str_replace('href=', 'class="button big previous" href=', $format);
+		return $format;
+	}
+	add_filter('previous_post_link', 'posts_link_attributes_prev');
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a

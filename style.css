@@ -1630,7 +1630,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /* Author */
 
-	.author {
+	.post .author {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1656,7 +1656,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		white-space: nowrap;
 	}
 
-		.author .name {
+		.post .author .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
 			-ms-transition: border-bottom-color 0.2s ease;
@@ -1666,13 +1666,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			margin: 0 1.5em 0 0;
 		}
 
-		.author img {
+		.post .author img {
 			border-radius: 100%;
 			display: block;
 			width: 4em;
 		}
 
-		.author:hover .name {
+		.post .author:hover .name {
 			border-bottom-color: transparent;
 		}
 
