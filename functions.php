@@ -141,6 +141,16 @@ function future_imperfect_widgets_init() {
 		'before_title'	=> '<h2 class="widget-title">',
 		'after_title'	=> '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'			=> esc_html__( 'Right Sidebar', 'future-imperfect' ),
+		'id'			=> 'right-sidebar',
+		'description'	=> '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">' . "\n",
+		'after_widget'	=> '</section>' . "\n",
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	=> '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'future_imperfect_widgets_init' );
 
