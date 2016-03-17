@@ -27,9 +27,6 @@ function future_imperfect_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	// add support for custom logo
-	add_theme_support( 'custom-logo' );
-
 	// add button styles to next/prev links on single posts
 	function posts_link_attributes_next( $format ) {
 		$format = str_replace('href=', 'class="button big next" href=', $format);
@@ -61,6 +58,12 @@ function future_imperfect_setup() {
 	// add custom image sizes
 	add_image_size( 'future-imperfect-large', 840, 341, true );
 	add_image_size( 'future-imperfect-small', 351, 176, true );
+	add_image_size( 'future-imperfect-logo', 350, 170 );
+
+	// add theme support for the custom logo size
+	add_theme_support( 'custom-logo', array(
+		'size' => 'future-imperfect-logo',
+	) );
 
 	/**
 	* Generate custom search form

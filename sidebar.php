@@ -16,8 +16,8 @@
 	<section id="intro">
 		<a href="#" class="logo"><img src="/wp-content/themes/future-imperfect/images/logo.jpg" alt="" /></a>
 		<header>
-			<h2>Future Imperfect</h2>
-			<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+			<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</header>
 	</section>
 
