@@ -7,82 +7,11 @@
 
 // register future_imperfect widgets
 function register_future_imperfect_widgets() {
-    register_widget( 'Future_Imperfect_Title_Widget' );
-    register_widget( 'Future_Imperfect_Large_Post_List_Widget' );
-    register_widget( 'Future_Imperfect_Small_Post_List_Widget' );
-    register_widget( 'Future_Imperfect_Title_List_Widget' );
+	register_widget( 'Future_Imperfect_Large_Post_List_Widget' );
+	register_widget( 'Future_Imperfect_Small_Post_List_Widget' );
+	register_widget( 'Future_Imperfect_Title_List_Widget' );
 }
 add_action( 'widgets_init', 'register_future_imperfect_widgets' );
-
-/**
- * Adds Future_Imperfect_Title_Widget widget.
- */
-class Future_Imperfect_Title_Widget extends WP_Widget {
-
-	/**
-	 * Register widget with WordPress.
-	 */
-	function __construct() {
-		parent::__construct(
-			'future_imperfect_title_widget', // Base ID
-			__( 'Future Imperfect Title Widget', 'future-imperfect' ), // Name
-			array( 'description' => __( 'Intended to be in the top of the left sidebar.', 'future-imperfect' ), ) // Args
-		);
-	}
-
-	/**
-	 * Front-end display of widget.
-	 *
-	 * @see WP_Widget::widget()
-	 *
-	 * @param array $args     Widget arguments.
-	 * @param array $instance Saved values from database.
-	 */
-	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
-		}
-		echo __( 'Hello, World!', 'future-imperfect' );
-		echo $args['after_widget'];
-	}
-
-	/**
-	 * Back-end widget form.
-	 *
-	 * @see WP_Widget::form()
-	 *
-	 * @param array $instance Previously saved values from database.
-	 */
-	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'future-imperfect' );
-		?>
-		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-		<?php 
-	}
-
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @see WP_Widget::update()
-	 *
-	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
-	 *
-	 * @return array Updated safe values to be saved.
-	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-
-		return $instance;
-	}
-
-} // class Future_Imperfect_Title_Widget
-
 
 /**
  * Adds Future_Imperfect_Large_Post_List_Widget widget.
@@ -313,30 +242,27 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 
 				$output .= '<li>' . "\n";
 				$output .= '<article>' . "\n";
-					$output .= '<header>' . "\n";
-						$output .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>' . "\n";
-						$output .= '<time class="published" datetime="' . esc_attr( get_the_date( 'Y-m-d') ) . '">' . esc_attr( get_the_date( 'F j, Y') ) . '</time>' . "\n";
-					$output .= '</header>' . "\n";
+				$output .= '<header>' . "\n";
+				$output .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>' . "\n";
+				$output .= '<time class="published" datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . esc_attr( get_the_date( 'F j, Y' ) ) . '</time>' . "\n";
+				$output .= '</header>' . "\n";
 
-					if ( has_post_thumbnail() ) {
-						$output .= '<a href="' . esc_url( get_permalink() ) . '" class="image">';
-						$output .= get_the_post_thumbnail( $post->ID, array( 51, 51 ) ); 
-						$output .= '</a>';
-					}
+				if ( has_post_thumbnail() ) {
+					$output .= '<a href="' . esc_url( get_permalink() ) . '" class="image">';
+					$output .= get_the_post_thumbnail( $post->ID, array( 51, 51 ) );
+					$output .= '</a>';
+				}
 
 				$output .= '</article>' . "\n";
 				$output .= '</li>' . "\n";
 
 			}
-
 		} else {
 			// no posts found
 		}
 
-
 		$output .= '</ul>' . "\n";
 		$output .= '</section>' . "\n";
-
 
 		/* Restore original Post Data */
 		wp_reset_postdata();
@@ -354,15 +280,15 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
+		echo wp_kses_post( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'] );
 		}
 
 		// list posts
-		echo $this->get_data( $instance );
+		echo wp_kses_post( $this->get_data( $instance ) );
 
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**
@@ -376,12 +302,12 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>">
+		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>">
 		</p>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Category:' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'cat' ) ); ?>"><?php _e( 'Category:' ); ?></label> 
 		<?php
 			$cat_args['name']             = $this->get_field_name( 'cat' );
 			$cat_args['selected']         = esc_html( $instance['cat'] );
@@ -392,8 +318,8 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 		</p>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label> 
-		<select id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>">
+		<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php _e( 'Number of posts to show:' ); ?></label> 
+		<select id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'posts_per_page' ) ); ?>">
 
 		<?php
 			// make options 1-20
@@ -405,12 +331,13 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 				} else {
 					$selected = '';
 				}
-				echo '<option value="' . $count . '"' . $selected . '>' . $count . '</option>' . "\n";
+				echo '<option value="' . absint( $count ) . '"' . esc_attr( $selected ) . '>' . absint( $count ) . '</option>' . "\n";
 				$count++;
 			}
 		?>
 
 		</select>
+		</p>
 
 		<?php
 
@@ -491,26 +418,22 @@ class Future_Imperfect_Title_List_Widget extends WP_Widget {
 				$the_query->the_post();
 
 				$output .= '<li>' . "\n";
-					$output .= '<a href="' . get_permalink() . '">' . "\n";
-						$output .= '<h3>' . get_the_title() . '</h3>' . "\n";
+				$output .= '<a href="' . get_permalink() . '">' . "\n";
+				$output .= '<h3>' . get_the_title() . '</h3>' . "\n";
 
-						// check to see if we have subtitles
-						if ( function_exists( 'get_the_subtitle' ) && '' != get_the_subtitle( get_the_ID(), '', '', false ) ) {
-							$output .= '<p>' . get_the_subtitle( get_the_ID(), '', '', false ) . '</p>' . "\n";
-						}
+				// check to see if we have subtitles
+				if ( function_exists( 'get_the_subtitle' ) && '' != get_the_subtitle( get_the_ID(), '', '', false ) ) {
+					$output .= '<p>' . get_the_subtitle( get_the_ID(), '', '', false ) . '</p>' . "\n";
+				}
 
-					$output .= '</a>' . "\n";
+				$output .= '</a>' . "\n";
 				$output .= '</li>' . "\n";
-
 			}
-
 		} else {
 			// no posts found
 		}
 
-
 		$output .= '</ul>' . "\n";
-
 
 		/* Restore original Post Data */
 		wp_reset_postdata();
@@ -528,15 +451,15 @@ class Future_Imperfect_Title_List_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
+		echo wp_kses_post( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'] );
 		}
 
 		// list posts
-		echo $this->get_data( $instance );
+		echo wp_kses_post( $this->get_data( $instance ) );
 
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	/**
@@ -550,12 +473,12 @@ class Future_Imperfect_Title_List_Widget extends WP_Widget {
 
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>">
+		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>">
 		</p>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Category:' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'cat' ) ); ?>"><?php _e( 'Category:' ); ?></label> 
 		<?php
 			$cat_args['name']             = $this->get_field_name( 'cat' );
 			$cat_args['selected']         = esc_html( $instance['cat'] );
@@ -566,25 +489,27 @@ class Future_Imperfect_Title_List_Widget extends WP_Widget {
 		</p>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label> 
-		<select id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'posts_per_page' ); ?>">
+		<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php _e( 'Number of posts to show:' ); ?></label> 
+		<select id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'posts_per_page' ) ); ?>">
 
 		<?php
 			// make options 1-20
 			$count = 1;
-			$max = 20;
+			$max   = 20;
+
 			while ( $count <= $max ) {
 				if ( $count == $instance['posts_per_page'] ) {
 					$selected = ' selected="selected"';
 				} else {
 					$selected = '';
 				}
-				echo '<option value="' . $count . '"' . $selected . '>' . $count . '</option>' . "\n";
+				echo '<option value="' . absint( $count ) . '"' . esc_attr( $selected ) . '>' . absint( $count ) . '</option>' . "\n";
 				$count++;
 			}
 		?>
 
 		</select>
+		</p>
 
 		<?php
 

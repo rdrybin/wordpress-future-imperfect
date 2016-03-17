@@ -27,6 +27,9 @@ function future_imperfect_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// add support for custom logo
+	add_theme_support( 'custom-logo' );
+
 	// add button styles to next/prev links on single posts
 	function posts_link_attributes_next( $format ) {
 		$format = str_replace('href=', 'class="button big next" href=', $format);
@@ -197,11 +200,6 @@ add_action( 'wp_enqueue_scripts', 'future_imperfect_scripts' );
  * Load custom Future Imperfect Widgets
  */
 require get_template_directory() . '/inc/widgets.php';
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
