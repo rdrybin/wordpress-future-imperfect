@@ -192,10 +192,18 @@ function future_imperfect_scripts() {
 	wp_enqueue_style( 'future-imperfect-ie9', get_template_directory_uri() . '/assets/css/ie9.css', array( 'future-imperfect-style' ), '20121010' );
 	$wp_styles->add_data( 'future-imperfect-ie9', 'conditional', 'lt IE 9' );
 
-
+	// add comment script if needed
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Add Future Imperfect Footer scripts
+	wp_enqueue_script( 'future-imperfect-skel', get_template_directory_uri() . '/assets/js/skel.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'future-imperfect-util', get_template_directory_uri() . '/assets/js/util.js', array( 'future-imperfect-skel' ), '', true );
+	wp_enqueue_script( 'future-imperfect-ie-respond', get_template_directory_uri() . '/assets/js/ie/respond.min.js', '', '', true );
+	wp_script_add_data( 'future-imperfect-ie-respond', 'conditional', 'lt IE 8' );
+	wp_enqueue_script( 'future-imperfect-main', get_template_directory_uri() . '/assets/js/main.js', array( 'future-imperfect-util' ), '', true );
+
 }
 add_action( 'wp_enqueue_scripts', 'future_imperfect_scripts' );
 

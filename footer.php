@@ -11,12 +11,6 @@
 
 ?>
 		</div>
-		<!-- Scripts -->
-			<script src="/wp-content/themes/future-imperfect/assets/js/jquery.min.js"></script>
-			<script src="/wp-content/themes/future-imperfect/assets/js/skel.min.js"></script>
-			<script src="/wp-content/themes/future-imperfect/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="/wp-content/themes/future-imperfect/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/wp-content/themes/future-imperfect/assets/js/main.js"></script>
 
 		<?php wp_footer(); ?>
 
