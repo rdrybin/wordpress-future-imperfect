@@ -65,6 +65,13 @@ function future_imperfect_setup() {
 		'size' => 'future-imperfect-logo',
 	) );
 
+	// create function for rendering custom logo
+	function future_imperfect_the_custom_logo() {
+		if ( function_exists( 'the_custom_logo' ) ) {
+			the_custom_logo();
+		}
+	}
+
 	/**
 	* Generate custom search form
 	*

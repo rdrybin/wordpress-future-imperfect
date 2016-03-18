@@ -73,6 +73,12 @@ class Future_Imperfect_Large_Post_List_Widget extends WP_Widget {
 						$output .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" class="author">' . get_avatar( get_the_author_meta( 'ID' ), 36 ) . '</a>' . "\n";
 					$output .= '</header>' . "\n";
 
+					if ( has_post_thumbnail() ) {
+						$output .= '<a href="' . esc_url( get_permalink() ) . '" class="image">';
+						$output .= get_the_post_thumbnail( $post->ID, 'future-imperfect-small' ); 
+						$output .= '</a>' . "\n";
+					}
+
 				$output .= '</article>' . "\n";
 
 			}
