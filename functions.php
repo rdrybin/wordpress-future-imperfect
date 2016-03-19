@@ -217,7 +217,16 @@ add_action( 'wp_enqueue_scripts', 'future_imperfect_scripts' );
 /**
  * Load custom Future Imperfect Widgets
  */
-require get_template_directory() . '/inc/widgets.php';
+require get_template_directory() . '/inc/fi_large_post_widget.php';
+require get_template_directory() . '/inc/fi_small_post_widget.php';
+require get_template_directory() . '/inc/fi_title_post_widget.php';
+
+function register_future_imperfect_widgets() {
+    register_widget( 'Future_Imperfect_Large_Post_List_Widget' );
+    register_widget( 'Future_Imperfect_Small_Post_List_Widget' );
+    register_widget( 'Future_Imperfect_Title_List_Widget' );
+}
+add_action( 'widgets_init', 'register_future_imperfect_widgets' );
 
 /**
  * Custom template tags for this theme.
