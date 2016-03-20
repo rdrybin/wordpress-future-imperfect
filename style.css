@@ -547,7 +547,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 	}
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 1279px) {
 
 		.row > * {
 			padding: 0 0 0 1em;
@@ -1458,7 +1458,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 1279px) {
 
 			body, input, select, textarea {
 				font-size: 12pt;
@@ -2388,7 +2388,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					content: '\f053';
 				}
 
-			@media screen and (max-width: 1280px) {
+			@media screen and (max-width: 1279px) {
 
 				ul.actions.pagination {
 					text-align: center;
@@ -2645,7 +2645,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		margin: 0 0 2em 0;
 	}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 1279px) {
 
 			.mini-posts {
 				display: -moz-flex;
@@ -3307,7 +3307,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 1279px) {
 
 			#wrapper {
 				display: block;
@@ -3367,7 +3367,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			padding-top: 0;
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 1279px) {
 
 			#sidebar {
 				border-top: solid 1px rgba(160, 160, 160, 0.3);
@@ -3419,7 +3419,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		font-size: 0.8em;
 	}
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 1279px) {
 
 		#intro {
 			margin: 0 0 3em 0;
