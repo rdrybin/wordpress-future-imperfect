@@ -71,12 +71,7 @@ get_header(); ?>
 				echo '<li><a href="' . get_next_posts_page_link() . '" class="' , $next_disable . 'button big next">Next Page</a></li>' . "\n";
 			echo '</ul>' . "\n";
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
 		endif; ?>
-
 
 		</div>
 

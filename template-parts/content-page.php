@@ -1,41 +1,37 @@
-<?php
-/**
- * Template part for displaying page content in page.php.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Future_Imperfect
- */
+<!-- Post -->
+<article class="post">
+	<header>
+		<div class="title">
+			<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h2>
 
-?>
+			<?php
+				// check to see if we have subtitles
+				if ( function_exists( 'get_the_subtitle' ) ) {
+					echo '<p>' . get_the_subtitle( get_the_ID(), '', '', false ) . '</p>' . "\n";
+				}
+			?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+		</div>
+	</header>
+	
+	<?php
+		if ( has_post_thumbnail() ) {
+			echo '<a href="' . esc_url( get_permalink() ) . '" class="image featured">';
+			the_post_thumbnail( 'future-imperfect-large' ); 
+			echo '</a>';
+		}
+	?>
 
-	<div class="entry-content">
-		<?php
-			the_content();
+	<?php the_content(); ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'future-imperfect' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'future-imperfect' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	<footer>
+		<ul class="actions">
+			<li></li>
+		</ul>
+		<ul class="stats">
+			<li><?php echo get_the_category_list( ',' ); ?></li>
+			<?php // <li><a href="#" class="icon fa-heart">28</a></li> ?>
+			<li><a href="<?php comments_link(); ?>" class="icon fa-comment"><?php comments_number( '0', '1', '%' ); ?></a></li>
+		</ul>
+	</footer>
+</article>

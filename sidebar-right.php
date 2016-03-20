@@ -13,9 +13,9 @@
 <section id="menu">
 
 	<?php
-		if ( is_active_sidebar( 'right-sidebar' ) ) {
-			dynamic_sidebar( 'right-sidebar' );
-		}
+	if ( is_active_sidebar( 'right-sidebar' ) ) {
+		dynamic_sidebar( 'right-sidebar' );
+	}
 	?>
 
 </section>

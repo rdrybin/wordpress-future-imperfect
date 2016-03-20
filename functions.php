@@ -29,16 +29,16 @@ function future_imperfect_setup() {
 
 	// add button styles to next/prev links on single posts
 	function posts_link_attributes_next( $format ) {
-		$format = str_replace('href=', 'class="button big next" href=', $format);
+		$format = str_replace( 'href=', 'class="button big next" href=', $format );
 		return $format;
 	}
-	add_filter('next_post_link', 'posts_link_attributes_next');
+	add_filter( 'next_post_link', 'posts_link_attributes_next' );
 
 	function posts_link_attributes_prev( $format ) {
-		$format = str_replace('href=', 'class="button big previous" href=', $format);
+		$format = str_replace( 'href=', 'class="button big previous" href=', $format );
 		return $format;
 	}
-	add_filter('previous_post_link', 'posts_link_attributes_prev');
+	add_filter( 'previous_post_link', 'posts_link_attributes_prev' );
 
 	/*
 	 * Let WordPress manage the document title.
@@ -222,9 +222,9 @@ require get_template_directory() . '/inc/fi_small_post_widget.php';
 require get_template_directory() . '/inc/fi_custom_nav_widget.php';
 
 function register_future_imperfect_widgets() {
-    register_widget( 'Future_Imperfect_Large_Post_List_Widget' );
-    register_widget( 'Future_Imperfect_Small_Post_List_Widget' );
-    register_widget( 'Future_Imperfect_WP_Nav_Menu_Widget' );
+	register_widget( 'Future_Imperfect_Large_Post_List_Widget' );
+	register_widget( 'Future_Imperfect_Small_Post_List_Widget' );
+	register_widget( 'Future_Imperfect_WP_Nav_Menu_Widget' );
 }
 add_action( 'widgets_init', 'register_future_imperfect_widgets' );
 
