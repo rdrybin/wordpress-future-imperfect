@@ -1500,6 +1500,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		text-decoration: none;
 	}
 
+	a.custom-logo-link {
+		border: 0;
+	}
+
 		a:before {
 			-moz-transition: color 0.2s ease;
 			-webkit-transition: color 0.2s ease;
@@ -1883,6 +1887,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 			form.search > input:first-child {
 				padding-left: 2.5em;
+			}
+
+			.widget .fa-search {
+				visibility: hidden;
 			}
 
 	label {
@@ -3178,6 +3186,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						width: 4em;
 					}
 
+					#header li.menu {
+						display: none;
+					}
 						#header .main ul li > a:before {
 							-moz-osx-font-smoothing: grayscale;
 							-webkit-font-smoothing: antialiased;
@@ -3237,6 +3248,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 			#header .links {
 				display: none;
+			}
+
+			#header li.menu {
+				display: inline-block;
 			}
 
 		}
