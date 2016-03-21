@@ -217,9 +217,9 @@ add_action( 'wp_enqueue_scripts', 'future_imperfect_scripts' );
 /**
  * Load custom Future Imperfect Widgets
  */
-require get_template_directory() . '/inc/fi_large_post_widget.php';
-require get_template_directory() . '/inc/fi_small_post_widget.php';
-require get_template_directory() . '/inc/fi_custom_nav_widget.php';
+require get_template_directory() . '/inc/fi-large-post-widget.php';
+require get_template_directory() . '/inc/fi-small-post-widget.php';
+require get_template_directory() . '/inc/fi-custom-nav-widget.php';
 
 function register_future_imperfect_widgets() {
 	register_widget( 'Future_Imperfect_Large_Post_List_Widget' );

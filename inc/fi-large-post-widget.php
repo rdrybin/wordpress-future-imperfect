@@ -6,18 +6,18 @@
  */
 
 /**
- * Adds Future_Imperfect_Small_Post_List_Widget widget.
+ * Adds Future_Imperfect_Large_Post_List_Widget widget.
  */
-class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
+class Future_Imperfect_Large_Post_List_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'future_imperfect_small_post_list_widget', // Base ID
-			__( 'Future Imperfect Small Post List', 'future-imperfect' ), // Name
-			array( 'description' => __( 'Lists posts with a small icon', 'future-imperfect' ), ) // Args
+			'future_imperfect_large_post_list_widget', // Base ID
+			__( 'Future Imperfect Large Post List', 'future-imperfect' ), // Name
+			array( 'description' => __( 'Lists posts with a large icon', 'future-imperfect' ), ) // Args
 		);
 	}
 
@@ -34,7 +34,7 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 			'posts_per_page' => 5,
 		);
 
-		if ( isset( $instance['cat'] ) && '' != $instance['cat'] && '-1' != $instance['cat'] ) {
+		if ( isset( $instance['cat'] ) && '' != $instance['cat'] ) {
 			$args['cat'] = $instance['cat'];
 		}
 
@@ -49,8 +49,7 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 		$the_query = new WP_Query( $args );
 
 		$output .= '<section>' . "\n";
-		$output .= '<ul class="posts">' . "\n";
-
+		$output .= '<div class="mini-posts">' . "\n";
 
 		// The Loop
 		if ( $the_query->have_posts() ) {
@@ -58,28 +57,26 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
 
-				$output .= '<li>' . "\n";
-				$output .= '<article>' . "\n";
-				$output .= '<header>' . "\n";
-				$output .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>' . "\n";
-				$output .= '<time class="published" datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . esc_attr( get_the_date( 'F j, Y' ) ) . '</time>' . "\n";
-				$output .= '</header>' . "\n";
+				$output .= '<article class="mini-post">' . "\n";
+					$output .= '<header>' . "\n";
+						$output .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>' . "\n";
+						$output .= '<time class="published" datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . esc_attr( get_the_date( 'F j, Y' ) ) . '</time>' . "\n";
+						$output .= '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" class="author">' . get_avatar( get_the_author_meta( 'ID' ), 36 ) . '</a>' . "\n";
+					$output .= '</header>' . "\n";
 
 				if ( has_post_thumbnail() ) {
 					$output .= '<a href="' . esc_url( get_permalink() ) . '" class="image">';
-					$output .= get_the_post_thumbnail( $post->ID, array( 51, 51 ) );
-					$output .= '</a>';
+					$output .= get_the_post_thumbnail( get_the_ID(), 'future-imperfect-small' );
+					$output .= '</a>' . "\n";
 				}
 
 				$output .= '</article>' . "\n";
-				$output .= '</li>' . "\n";
-
 			}
 		} else {
 			// no posts found
 		}
 
-		$output .= '</ul>' . "\n";
+		$output .= '</div>' . "\n";
 		$output .= '</section>' . "\n";
 
 		/* Restore original Post Data */
@@ -100,7 +97,7 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo wp_kses_post( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
-			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'] );
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		// list posts
@@ -118,18 +115,23 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+
 		?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:' ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $instance['title'] ); ?>">
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'cat' ) ); ?>"><?php _e( 'Category:' ); ?></label> 
 		<?php
 			$cat_args['name']             = $this->get_field_name( 'cat' );
-			$cat_args['selected']         = esc_html( $instance['cat'] );
 			$cat_args['show_option_none'] = 'No Category';
+
+			if ( isset( $instance['cat'] ) && '' != $instance['cat'] ) {
+				$cat_args['selected'] = esc_html( $instance['cat'] );
+			}
 
 			wp_dropdown_categories( $cat_args );
 		?>
@@ -143,8 +145,9 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 			// make options 1-20
 			$count = 1;
 			$max = 20;
+
 			while ( $count <= $max ) {
-				if ( $count == $instance['posts_per_page'] ) {
+				if ( isset( $instance['posts_per_page'] ) && $count == $instance['posts_per_page'] ) {
 					$selected = ' selected="selected"';
 				} else {
 					$selected = '';
@@ -155,7 +158,6 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 		?>
 
 		</select>
-		</p>
 
 		<?php
 
@@ -181,4 +183,4 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 		return $instance;
 	}
 
-} // class Future_Imperfect_Snall_Post_List_Widget
+} // class Future_Imperfect_Large_Post_List_Widget
