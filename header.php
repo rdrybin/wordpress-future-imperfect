@@ -38,6 +38,7 @@
 							'container'      => 'nav',
 							'theme_location' => 'primary',
 							'container_class'     => 'links',
+                            'fallback_cb' => false
 						);
 						wp_nav_menu( $menu_array );
 						?>
