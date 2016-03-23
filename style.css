@@ -1880,6 +1880,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				visibility: hidden;
 			}
 
+			.fa-search:before {
+				font-family: FontAwesome;
+			}
+
 	label {
 		color: #3c3b3b;
 		display: block;
@@ -2096,13 +2100,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 /* Image */
 
 	.post img {
-    	height: auto;
-    	max-width: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 
 	figure.alignnone {
-    	height: auto;
-    	max-width: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 
 	img.alignleft, figure.alignleft {
@@ -2116,7 +2120,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	}
 
 	figure.aligncenter {
-    	margin: 0 auto 20px;
+		margin: 0 auto 20px;
 	}
 
 	.image {
