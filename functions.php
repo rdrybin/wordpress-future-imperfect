@@ -24,6 +24,23 @@ function future_imperfect_setup() {
 	 */
 	load_theme_textdomain( 'future-imperfect', get_template_directory() . '/languages' );
 
+	// add the <time> html5 tag
+	function future_imperfect_time_filter( $string ) {
+
+		global $allowedtags, $allowedposttags;
+
+		$time = array(
+			'class' => array(),
+			'datetime' => array(),
+		);
+
+		$allowedtags['time'] = $time;
+		$allowedposttags['time'] = $time;
+
+		return $string;
+	}
+	add_action( 'init', 'future_imperfect_time_filter' );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 

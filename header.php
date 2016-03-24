@@ -35,10 +35,10 @@
 
 						<?php
 						$menu_array = array(
-							'container'      => 'nav',
-							'theme_location' => 'primary',
-							'container_class'     => 'links',
-                            'fallback_cb' => false
+							'container'       => 'nav',
+							'theme_location'  => 'primary',
+							'container_class' => 'links',
+							'fallback_cb'     => false,
 						);
 						wp_nav_menu( $menu_array );
 						?>
@@ -49,13 +49,13 @@
 									<?php get_search_form(); ?>
 								</li>
 								<?php
-									if ( is_active_sidebar( 'right-sidebar' ) ) {
+								if ( is_active_sidebar( 'right-sidebar' ) ) {
 								?>
 									<li class="menu">
 										<a class="fa-bars" href="#menu"><?php echo esc_attr__( 'Menu', 'future-imperfect' ); ?></a>
 									</li>
 								<?php
-									}
+								}
 								?>
 							</ul>
 						</nav>

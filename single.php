@@ -12,7 +12,6 @@ get_header(); ?>
 	<!-- Main -->
 	<div id="main">
 
-
 		<?php
 		while ( have_posts() ) : the_post();
 

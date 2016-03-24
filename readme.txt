@@ -1,19 +1,19 @@
 === Future Imperfect ===
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Contributors: topher1kenobe
+Tags: translation-ready, custom-menu, post-formats, threaded-comments
 
-Requires at least: 4.0
-Tested up to: 4.4.2
+Requires at least: 4.5
+Tested up to: 4.5
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A starter theme called Future Imperfect, or underscores.
+A basic blog theme called Future Imperfect.
 
 == Description ==
 
-Hi. I'm a starter theme called Future Imperfect, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Future Imperfect is a simple blog theme based on the HTML5 template at [http://html5up.net/future-imperfect](http://html5up.net/future-imperfect)
 
 == Installation ==
 	
@@ -25,14 +25,23 @@ Hi. I'm a starter theme called Future Imperfect, or underscores, if you like. I'
 
 = Does this theme support any plugins? =
 
-Future Imperfect includes support for Infinite Scroll in Jetpack.
+Future Imperfect includes support [WP Subtitles](https://wordpress.org/plugins/wp-subtitle/)
+
+= Why don't my images fit well? =
+
+This theme uses 2 custom image sizes. We recommend using something like [Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/) to make the new image sizes.
+
+= How do I get my menu in the top bar? =
+
+When editing your menu, click the checkbox at the bottom labeled Primary Nav and save the menu.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - March 22 2016 =
 * Initial release
 
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Based on the [Future Imperfect HTML5](http://html5up.net/future-imperfect) template by @n33co

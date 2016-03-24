@@ -6,10 +6,13 @@ Author URI: http://topher1kenobe.com
 Description: Just a blog theme.  Design based on the <a href="http://html5up.net/future-imperfect">Future Imperfect html5up</a> template. Requires WordPress 4.5+. Support for subtitles is provided by <a href="https://wordpress.org/plugins/wp-subtitle/">WP-Subtitle</a>.
 Version: 1.0.0
 Text Domain: future-imperfect
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
+HTML and CSS from
 Future Imperfect by HTML5 UP
 html5up.net | @n33co
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Free for personal and commercial use under the CC BY 4.0 license (https://creativecommons.org/licenses/by/4.0/)
 */
 
 /* Reset */
@@ -1880,6 +1883,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				visibility: hidden;
 			}
 
+			.fa-search:before {
+				font-family: FontAwesome;
+			}
+
 	label {
 		color: #3c3b3b;
 		display: block;
@@ -2096,13 +2103,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 /* Image */
 
 	.post img {
-    	height: auto;
-    	max-width: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 
 	figure.alignnone {
-    	height: auto;
-    	max-width: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 
 	img.alignleft, figure.alignleft {
@@ -2116,7 +2123,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	}
 
 	figure.aligncenter {
-    	margin: 0 auto 20px;
+		margin: 0 auto 20px;
 	}
 
 	.image {
@@ -2338,6 +2345,22 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				ul.actions li:last-child {
 					padding-right: 0;
 				}
+
+			#infinite-handle span {
+				background: none;
+				padding: 0;
+			}
+
+			.infinite-scroll ul.actions.pagination {
+				display: none;
+			}
+
+			#infinite-handle span button,
+			#infinite-handle span button:hover,
+			#infinite-handle span button:focus {
+				height: auto;
+				padding: 20px;
+			}
 
 			ul.actions.pagination .next {
 				text-decoration: none;
