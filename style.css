@@ -2346,6 +2346,22 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 					padding-right: 0;
 				}
 
+			#infinite-handle span {
+				background: none;
+				padding: 0;
+			}
+
+			.infinite-scroll ul.actions.pagination {
+				display: none;
+			}
+
+			#infinite-handle span button,
+			#infinite-handle span button:hover,
+			#infinite-handle span button:focus {
+				height: auto;
+				padding: 20px;
+			}
+
 			ul.actions.pagination .next {
 				text-decoration: none;
 			}
