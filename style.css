@@ -1664,7 +1664,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 			border-radius: 100%;
 			display: block;
 			width: 4em;
-            height: auto;
+			height: auto;
 		}
 
 		.author:hover .name {
