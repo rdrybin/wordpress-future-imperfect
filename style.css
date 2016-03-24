@@ -2102,10 +2102,10 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 /* Image */
 
-    .wp-caption {
-        max-width: 100%;
-    }
-    
+	.wp-caption {
+		max-width: 100%;
+	}
+
 	.post img {
 		height: auto;
 		max-width: 100%;
