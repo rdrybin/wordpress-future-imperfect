@@ -1624,7 +1624,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 /* Author */
 
-	.post .author {
+	.author {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1650,7 +1650,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		white-space: nowrap;
 	}
 
-		.post .author .name {
+		.author .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
 			-ms-transition: border-bottom-color 0.2s ease;
@@ -1660,13 +1660,14 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 			margin: 0 1.5em 0 0;
 		}
 
-		.post .author img {
+		.author img {
 			border-radius: 100%;
 			display: block;
 			width: 4em;
+			height: auto;
 		}
 
-		.post .author:hover .name {
+		.author:hover .name {
 			border-bottom-color: transparent;
 		}
 
@@ -2101,6 +2102,10 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		}
 
 /* Image */
+
+	.wp-caption {
+		max-width: 100%;
+	}
 
 	.post img {
 		height: auto;
