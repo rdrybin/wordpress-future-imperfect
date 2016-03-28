@@ -2109,12 +2109,12 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 	.post img {
 		height: auto;
-		max-width: 100%;
+		max-width: 686px;
 	}
 
 	figure.alignnone {
 		height: auto;
-		max-width: 100%;
+		max-width: 686px;
 	}
 
 	img.alignleft, figure.alignleft {
@@ -2409,9 +2409,18 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 					text-align: center;
 				}
 
-					ul.actions.pagination .next, ul.actions.pagination .previous {
-						min-width: 20em;
-					}
+				ul.actions.pagination .next, ul.actions.pagination .previous {
+					min-width: 20em;
+				}
+
+				.post img {
+					max-width: 100%
+				}
+
+				figure.alignnone {
+					max-width: 100%
+				}
+
 
 			}
 
