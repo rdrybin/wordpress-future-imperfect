@@ -1594,6 +1594,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		overflow: auto;
 		padding: 10px;
 		border: 1px solid #ccc;
+		max-width: 686px;
 	}
 
 		pre code {
@@ -2424,6 +2425,9 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 					max-width: 100%
 				}
 
+				pre {
+					max-width: 100%;
+				}
 
 			}
 
