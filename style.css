@@ -2743,6 +2743,8 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				flex-grow: 1;
 				-ms-flex: 1;
 				padding: 3.75em 3em 3.3em 3em;
+				width: 414px;
+				word-wrap: break-word;
 			}
 
 				.post > header .title h2 {
@@ -2881,6 +2883,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 						margin: 0 0 2em 0;
 						padding: 0;
 						text-align: center;
+						width: 100%;
 					}
 
 					.post > header .meta {
