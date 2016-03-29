@@ -20,9 +20,15 @@
 	
 	<?php
 		if ( has_post_thumbnail() ) {
-			echo '<a href="' . esc_url( get_permalink() ) . '" class="image featured">';
-			the_post_thumbnail( 'future-imperfect-large' ); 
-			echo '</a>';
+			// get the image dimensions
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'future-imperfect-large' );
+
+			// if the image is wider than tall then print it
+			if ( $image[1] > $image[2] ) {
+				echo '<a href="' . esc_url( get_permalink() ) . '" class="image featured">';
+				the_post_thumbnail( 'future-imperfect-large' );
+				echo '</a>';
+			}
 		}
 	?>
 
