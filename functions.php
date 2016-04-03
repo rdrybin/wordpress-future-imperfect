@@ -24,6 +24,10 @@ function future_imperfect_setup() {
 	 */
 	load_theme_textdomain( 'future-imperfect', get_template_directory() . '/languages' );
 
+	/*
+	 * Custom functions for the future-imperfect theme
+	 */
+
 	// add the <time> html5 tag
 	function future_imperfect_time_filter( $string ) {
 
@@ -41,8 +45,6 @@ function future_imperfect_setup() {
 	}
 	add_action( 'init', 'future_imperfect_time_filter' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
 
 	// add button styles to next/prev links on single posts
 	function posts_link_attributes_next( $format ) {
@@ -111,6 +113,9 @@ function future_imperfect_setup() {
 		'primary' => esc_html__( 'Primary', 'future-imperfect' ),
 	) );
 
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -121,18 +126,6 @@ function future_imperfect_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
 	) );
 
 	// Set up the WordPress core custom background feature.
