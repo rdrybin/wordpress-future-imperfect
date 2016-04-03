@@ -65,8 +65,11 @@ class Future_Imperfect_Large_Post_List_Widget extends WP_Widget {
 					$output .= '</header>' . "\n";
 
 				if ( has_post_thumbnail() ) {
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'future-imperfect-small' );
+
 					$output .= '<a href="' . esc_url( get_permalink() ) . '" class="image">';
-					$output .= get_the_post_thumbnail( get_the_ID(), 'future-imperfect-small' );
+					//$output .= get_the_post_thumbnail( get_the_ID(), 'future-imperfect-small' );
+					$output .= '<img src="' . $thumbnail[0] . '">' . "\n";
 					$output .= '</a>' . "\n";
 				}
 
