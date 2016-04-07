@@ -52,7 +52,7 @@
 								if ( is_active_sidebar( 'right-sidebar' ) ) {
 								?>
 									<li class="menu">
-										<a class="fa-bars" href="#menu"><?php echo esc_attr__( 'Menu', 'future-imperfect' ); ?></a>
+										<a class="fa-bars" href="#menu"><?php _e( 'Menu', 'future-imperfect' ); ?></a>
 									</li>
 								<?php
 								}

@@ -99,9 +99,9 @@ function future_imperfect_setup() {
 	*/
 	function fm_header_form( $form ) {
 
-		$form = '<a class="fa-search" href="#search">'. esc_attr__( 'Search' ) .'</a>' . "\n";
+		$form = '<a class="fa-search" href="#search">'. __( 'Search' ) .'</a>' . "\n";
 		$form .= '<form id="search" method="get" action="' .esc_url(  home_url( '/' ) ) . '">' . "\n";
-			$form .= '<input type="text" name="s" id="s" placeholder="'. esc_attr__( 'Search' ) .'" value="' . get_search_query() . '">' . "\n";
+			$form .= '<input type="text" name="s" id="s" placeholder="'. __( 'Search' ) .'" value="' . get_search_query() . '">' . "\n";
 		$form .= '</form>' . "\n";
 
 		return $form;
