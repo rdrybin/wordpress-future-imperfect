@@ -12,7 +12,7 @@
 
 		</div>
 		<div class="meta">
-			<time class="published" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_attr( get_the_date( 'F j, Y' ) ); ?></time>
+			<time class="published" datetime="<?php echo esc_attr( get_the_time( 'Y-m-d' ) ); ?>"><?php echo esc_attr( get_the_time( 'F j, Y' ) ); ?></time>
 			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author"><span class="name"><?php echo esc_html( get_the_author() ); ?></span><?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?></a>
 		</div>
 	</header>

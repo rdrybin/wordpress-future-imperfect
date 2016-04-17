@@ -42,12 +42,12 @@ get_header(); ?>
 
 			endwhile;
 
-			// check to see if we have a previous link
-			if ( ! get_previous_posts_link() ) :
-					$prev_disable = 'disabled ';
-				else :
-					$prev_disable = '';
-			endif;
+				// check to see if we have a previous link
+				if ( ! get_previous_posts_link() ) :
+						$prev_disable = 'disabled ';
+					else :
+						$prev_disable = '';
+				endif;
 
 				// check to see if we have a next link
 				if ( ! get_next_posts_link() ) :
@@ -60,6 +60,12 @@ get_header(); ?>
 				echo '<ul class="actions pagination">' . "\n";
 					echo '<li><a href="' . esc_url( get_previous_posts_page_link() ) . '" class="' . esc_attr( $prev_disable ) . 'button big previous">Previous Page</a></li>' . "\n";
 					echo '<li><a href="' . esc_url( get_next_posts_page_link() ) . '" class="' . esc_attr( $next_disable ) . 'button big next">Next Page</a></li>' . "\n";
+				echo '</ul>' . "\n";
+
+				// make pagination
+				echo '<ul class="actions pagination">' . "\n";
+					echo '<li><a href="' . esc_url( get_previous_posts_page_link() ) . '" class="disabled button big previous">Previous Page</a></li>' . "\n";
+					echo '<li><a href="' . esc_url( get_next_posts_page_link() ) . '" class="button big next">Next Page</a></li>' . "\n";
 				echo '</ul>' . "\n";
 
 		endif; ?>
