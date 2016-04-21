@@ -3415,6 +3415,11 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 /* Intro */
 
+    .custom-logo {
+        max-width: 100%;
+        height: auto;
+    }
+
 	#intro .logo {
 		border-bottom: 0;
 		display: inline-block;
