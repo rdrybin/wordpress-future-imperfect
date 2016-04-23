@@ -61,7 +61,7 @@ class Future_Imperfect_Small_Post_List_Widget extends WP_Widget {
 				$output .= '<article>' . "\n";
 				$output .= '<header>' . "\n";
 				$output .= '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>' . "\n";
-				$output .= '<time class="published" datetime="' . esc_attr( get_the_date( 'Y-m-d' ) ) . '">' . esc_attr( get_the_date( 'F j, Y' ) ) . '</time>' . "\n";
+				$output .= '<time class="published" datetime="' . esc_attr( get_the_time( 'Y-m-d' ) ) . '">' . esc_attr( get_the_time( 'F j, Y' ) ) . '</time>' . "\n";
 				$output .= '</header>' . "\n";
 
 				if ( has_post_thumbnail() ) {
