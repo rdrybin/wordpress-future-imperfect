@@ -44,4 +44,4 @@ When editing your menu, click the checkbox at the bottom labeled Primary Nav and
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Based on the [Future Imperfect HTML5](http://html5up.net/future-imperfect) template by @n33co
+* Based on the [Future Imperfect HTML5](http://html5up.net/future-imperfect) template by @n33co [CC-BY-SA 4.0](https://wiki.creativecommons.org/wiki/ShareAlike_compatibility_analysis:_GPL)
