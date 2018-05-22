@@ -33,7 +33,7 @@ This theme uses 2 custom image sizes. We recommend using something like [Regener
 
 = How do I get my menu in the top bar? =
 
-When editing your menu, click the checkbox at the bottom labeled Primary Nav and save the menu.
+When editing your menu, click the checkbox at the bottom labeled Primary Nav and save the menu..
 
 == Changelog ==
 
