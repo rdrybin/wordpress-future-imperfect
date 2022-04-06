@@ -58,15 +58,28 @@ get_header(); ?>
 
 				// make pagination
 				echo '<ul class="actions pagination">' . "\n";
-					echo '<li><a href="' . esc_url( get_previous_posts_page_link() ) . '" class="' . esc_attr( $prev_disable ) . 'button big previous">Previous Page</a></li>' . "\n";
-					echo '<li><a href="' . esc_url( get_next_posts_page_link() ) . '" class="' . esc_attr( $next_disable ) . 'button big next">Next Page</a></li>' . "\n";
-				echo '</ul>' . "\n";
-
-				// make pagination
-				echo '<ul class="actions pagination">' . "\n";
-					echo '<li><a href="' . esc_url( get_previous_posts_page_link() ) . '" class="disabled button big previous">Previous Page</a></li>' . "\n";
-					echo '<li><a href="' . esc_url( get_next_posts_page_link() ) . '" class="button big next">Next Page</a></li>' . "\n";
-				echo '</ul>' . "\n";
+				$args = [
+					'base'         => '%_%',
+					'format'       => '?page=%#%',
+					'total'        => 1,
+					'current'      => 0,
+					'show_all'     => False,
+					'end_size'     => 1,
+					'mid_size'     => 2,
+					'prev_next'    => True,
+					'prev_text'    => __('« Предыдущая'),
+					'next_text'    => __('Следующая »'),
+					'type'         => 'list',
+					'add_args'     => False,
+					'add_fragment' => '',
+					'before_page_number' => '',
+					'after_page_number'  => ''
+				];
+				
+				echo paginate_links( $args );
+				//echo '<li><a href="' . get_previous_posts_page_link() . '" class="' . $prev_disable . 'button big previous">Previous Page</a></li>' . "\n";
+				//echo '<li><a href="' . get_next_posts_page_link() . '" class="' , $next_disable . 'button big next">Next Page</a></li>' . "\n";
+			echo '</ul>' . "\n";
 
 		endif; ?>
 

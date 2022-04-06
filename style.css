@@ -1528,7 +1528,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		color: #3c3b3b;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 800;
-		letter-spacing: 0.25em;
+		letter-spacing: 0.05em;
 		line-height: 1.65;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
@@ -1538,10 +1538,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 			color: inherit;
 			border-bottom: 0;
 		}
-
-	h2 {
-		font-size: 1.1em;
-	}
 
 	h3 {
 		font-size: 0.9em;
@@ -1629,7 +1625,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 /* Author */
 
-	.author {
+	.meta .author {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1655,7 +1651,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		white-space: nowrap;
 	}
 
-		.author .name {
+		.meta .author .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
 			-ms-transition: border-bottom-color 0.2s ease;
@@ -1665,14 +1661,14 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 			margin: 0 1.5em 0 0;
 		}
 
-		.author img {
+		.meta .author img {
 			border-radius: 100%;
 			display: block;
 			width: 4em;
 			height: auto;
 		}
 
-		.author:hover .name {
+		.meta .author:hover .name {
 			border-bottom-color: transparent;
 		}
 
@@ -2361,7 +2357,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				padding: 0;
 			}
 
-			.infinite-scroll ul.actions.pagination {
+			.infinite-scroll .actions.pagination ul {
 				display: none;
 			}
 
@@ -2372,11 +2368,12 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				padding: 20px;
 			}
 
-			ul.actions.pagination .next {
+			.actions.pagination ul li {
 				text-decoration: none;
+				height: 4,5em;
 			}
 
-				ul.actions.pagination .next:after {
+				.actions.pagination ul li:after {
 					content: "";
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
@@ -2386,15 +2383,16 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 					text-transform: none !important;
 				}
 
-				ul.actions.pagination .next:after {
+				.actions.pagination ul li:after {
 					content: '\f054';
 				}
 
-			ul.actions.pagination .previous {
+			.actions.pagination ul li {
 				text-decoration: none;
+				height: 4,5em;
 			}
 
-				ul.actions.pagination .previous:before {
+				.actions.pagination ul li:before {
 					content: "";
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
@@ -2404,18 +2402,19 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 					text-transform: none !important;
 				}
 
-				ul.actions.pagination .previous:before {
+				.actions.pagination ul li:before {
 					content: '\f053';
 				}
 
 			@media screen and (max-width: 1279px) {
 
-				ul.actions.pagination {
+				.actions.pagination ul {
 					text-align: center;
 				}
 
-				ul.actions.pagination .next, ul.actions.pagination .previous {
+				.actions.pagination ul li {
 					min-width: 20em;
+					height: 4,5em;
 				}
 
 				.post img {
@@ -2434,7 +2433,7 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 			@media screen and (max-width: 736px) {
 
-				ul.actions.pagination .next, ul.actions.pagination .previous {
+				.actions.pagination ul li {
 					min-width: 18em;
 				}
 
@@ -2571,7 +2570,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 					-webkit-flex-grow: 1;
 					-ms-flex-grow: 1;
 					flex-grow: 1;
-					-ms-flex: 1;
 				}
 
 					ul.posts article header h3 {
@@ -2742,7 +2740,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				-webkit-flex-grow: 1;
 				-ms-flex-grow: 1;
 				flex-grow: 1;
-				-ms-flex: 1;
 				padding: 3.75em 3em 3.3em 3em;
 				width: 414px;
 				word-wrap: break-word;
@@ -2880,7 +2877,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				}
 
 					.post > header .title {
-						-ms-flex: 0 1 auto;
 						margin: 0 0 2em 0;
 						padding: 0;
 						text-align: center;
@@ -3221,9 +3217,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 						width: 4em;
 					}
 
-					#header li.menu {
-						display: none;
-					}
 						#header .main ul li > a:before {
 							-moz-osx-font-smoothing: grayscale;
 							-webkit-font-smoothing: antialiased;
@@ -3348,10 +3341,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				display: block;
 			}
 
-			#main {
-				max-width: 1248px !important;
-			}
-
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3369,7 +3358,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		-webkit-flex-grow: 1;
 		-ms-flex-grow: 1;
 		flex-grow: 1;
-		-ms-flex: 1;
 		width: 100%;
 		max-width: 948px;
 	}

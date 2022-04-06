@@ -57,10 +57,36 @@
 								<?php
 								}
 								?>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
 							</ul>
 						</nav>
 					</header>
 
 				<!-- Menu -->
+
+				<section id="menu">
+
+						<!-- Search -->
+							<section>
+									<?php get_search_form(); ?>
+							</section>
+						<!-- Links -->
+						<section>
+							<?php
+							$menu_array = array(
+								'container'       => '',
+								'theme_location'  => 'primary',
+								'container_class' => '',
+								'menu_class' => 'links',
+								'fallback_cb'     => false,
+								'link_before'       => '<h3>', // текст перед текстом ссылки
+								'link_after'        => '</h3>', // текст после текста ссылки
+							);
+							wp_nav_menu( $menu_array );
+							?>
+						</section>
+					</section>
 
 					<?php get_sidebar( 'right' ); ?>

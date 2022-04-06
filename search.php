@@ -23,7 +23,7 @@ get_header(); ?>
 		?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'future-imperfect' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Результаты поиска по запросу: %s', 'future-imperfect' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php
@@ -69,7 +69,9 @@ get_header(); ?>
 				echo '<li><a href="' . get_next_posts_page_link() . '" class="' , $next_disable . 'button big next">Next Page</a></li>' . "\n";
 			echo '</ul>' . "\n";
 
-		endif; ?>
+		else:  echo "Ничего не найдено!";
+		endif;
+		?>
 
 		</div>
 

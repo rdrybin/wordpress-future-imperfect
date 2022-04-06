@@ -188,7 +188,7 @@ function future_imperfect_scripts() {
 	wp_enqueue_style( 'future-imperfect-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 
 	// load the google font
-	wp_enqueue_style( 'future-imperfect-google-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900' );
+	//wp_enqueue_style( 'future-imperfect-google-font', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900' );
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'future-imperfect-style', get_stylesheet_uri() );
