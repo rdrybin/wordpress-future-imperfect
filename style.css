@@ -1713,6 +1713,8 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 	input[type="reset"],
 	input[type="button"],
 	button,
+	.page-numbers li a:nth-child(n),
+	.page-numbers li span,
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -1740,6 +1742,17 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 		text-transform: uppercase;
 		white-space: nowrap;
 	}
+
+	.page-numbers{
+		display: flex;
+		flex-direction: row;
+		list-style-type: none;
+	}
+
+	.page-numbers li span{
+		color:rgba(160, 160, 160, 0.3) !important;
+	}
+
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -2368,54 +2381,8 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 				padding: 20px;
 			}
 
-			.actions.pagination ul li {
-				text-decoration: none;
-				height: 4,5em;
-			}
-
-				.actions.pagination ul li:after {
-					content: "";
-					-moz-osx-font-smoothing: grayscale;
-					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
-					font-style: normal;
-					font-weight: normal;
-					text-transform: none !important;
-				}
-
-				.actions.pagination ul li:after {
-					content: '\f054';
-				}
-
-			.actions.pagination ul li {
-				text-decoration: none;
-				height: 4,5em;
-			}
-
-				.actions.pagination ul li:before {
-					content: "";
-					-moz-osx-font-smoothing: grayscale;
-					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
-					font-style: normal;
-					font-weight: normal;
-					text-transform: none !important;
-				}
-
-				.actions.pagination ul li:before {
-					content: '\f053';
-				}
 
 			@media screen and (max-width: 1279px) {
-
-				.actions.pagination ul {
-					text-align: center;
-				}
-
-				.actions.pagination ul li {
-					min-width: 20em;
-					height: 4,5em;
-				}
 
 				.post img {
 					max-width: 100%;
@@ -2431,13 +2398,6 @@ Free for personal and commercial use under the CC BY 4.0 license (https://creati
 
 			}
 
-			@media screen and (max-width: 736px) {
-
-				.actions.pagination ul li {
-					min-width: 18em;
-				}
-
-			}
 
 			ul.actions.small li {
 				padding: 0 1em 0 0;

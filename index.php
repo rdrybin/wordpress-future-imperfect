@@ -42,44 +42,15 @@ get_header(); ?>
 
 			endwhile;
 
-				// check to see if we have a previous link
-				if ( ! get_previous_posts_link() ) :
-						$prev_disable = 'disabled ';
-					else :
-						$prev_disable = '';
-				endif;
-
-				// check to see if we have a next link
-				if ( ! get_next_posts_link() ) :
-					$next_disable = 'disabled ';
-				else :
-					$next_disable = '';
-				endif;
-
 				// make pagination
-				echo '<ul class="actions pagination">' . "\n";
 				$args = [
-					'base'         => '%_%',
-					'format'       => '?page=%#%',
-					'total'        => 1,
-					'current'      => 0,
-					'show_all'     => False,
-					'end_size'     => 1,
-					'mid_size'     => 2,
-					'prev_next'    => True,
-					'prev_text'    => __('« Предыдущая'),
-					'next_text'    => __('Следующая »'),
+
+					'prev_text'    => '« Предыдущая',
+					'next_text'    => 'Следующая »',
 					'type'         => 'list',
-					'add_args'     => False,
-					'add_fragment' => '',
-					'before_page_number' => '',
-					'after_page_number'  => ''
+
 				];
-				
-				echo paginate_links( $args );
-				//echo '<li><a href="' . get_previous_posts_page_link() . '" class="' . $prev_disable . 'button big previous">Previous Page</a></li>' . "\n";
-				//echo '<li><a href="' . get_next_posts_page_link() . '" class="' , $next_disable . 'button big next">Next Page</a></li>' . "\n";
-			echo '</ul>' . "\n";
+				echo paginate_links($args);
 
 		endif; ?>
 
