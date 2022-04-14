@@ -11,8 +11,16 @@
 
 ?>
 		</div>
+		<?php
+	if ( is_active_sidebar( 'footer-sidebar' ) ) {
+		echo '<ul>' . "\n";
+		dynamic_sidebar( 'footer-sidebar' );
+		echo '</ul>' . "\n";
+	}
+	?>
 
 		<?php wp_footer(); ?>
+		
 
 	</body>
 </html>
