@@ -30,7 +30,7 @@
 		</ul>
 		<ul class="stats">
 			<li><?php echo get_the_category_list(','); ?></li>
-			<li><?php echo get_the_tag_list(','); ?></li>
+			<li><?php echo get_the_tag_list(' ', ', ', ' '); ?></li>
 			<li><a href="<?php comments_link(); ?>" class="icon fa-comment"><?php comments_number('0', '1', '%'); ?></a></li>
 		</ul>
 	</footer>
